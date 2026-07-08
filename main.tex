@@ -1,0 +1,258 @@
+\documentclass[12pt,a4paper]{article}
+% \usepackage[spanish]{babel}
+% \usepackage[utf8]{inputenc}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{todonotes}
+\usepackage[es-AR]{datetime2}
+
+% para el cronograma
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{slashbox}
+
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{comment}
+
+% \usepackage{natbib}
+\usepackage[backend=biber, 
+%style=alphabetic, 
+style=numeric,
+%style=apa,
+backref=true]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{graphicx}
+
+\newcommand{\gl}{\guillemotleft{}}
+\newcommand{\gr}{\guillemotright{}}
+
+\title{Propuesta de Tesis de \\ Licenciatura en Ciencias de la Computación}
+\author{Luis Eduardo Garcia Carrillo}
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+
+\begin{center}
+\noindent \bf \Large Propuesta de Tesis de \\[.5em]
+
+Licenciatura en Ciencias de la Computación
+\end{center}
+
+
+\section{Datos generales}
+
+\subsection{Tema del proyecto}
+\textbf{Título preliminar:}\todo{¿Se charló si brinda un título o un tema preliminar? Check: Si, ya quedo resuelto asi}
+\textit{\gl Hay lugar\gr}: Detección automática de ocupación de playa de estacionamiento usando visión computacional en tiempo real.
+
+\subsection{Datos del alumno}
+\begin{description}
+    \item[Nombre y apellido:] Luis Eduardo Garcia\todo{¿Tildes como figura en el DNI? Check: Garcia no lleva tilde ni acentos} Carrillo
+    \item[DNI:] 19.005.756
+    \item[Legajo:]
+\end{description}    
+
+\subsection{Datos del director y codirector de la tesis}
+\begin{itemize}
+    \item Director de la tesis:
+        \begin{description}
+            \item[Nombre y apellido:] Pablo Kogan
+            \item[DNI:]
+        \end{description}
+    
+    \item Codirector de la tesis:
+        \begin{description}
+            \item[Nombre y apellido:] Christian Nelson Gimenez
+            \item[DNI:] 33.002.119
+        \end{description}
+\end{itemize}
+
+\subsection{Fecha de presentación de la propuesta}
+\DTMspanishMonthname{\the\month} del \the\year
+
+\subsection{Tipo de tesis}
+Se considera que este trabajo clasifica como una \emph{Tesis Experimental}.
+%Porque creo una solucion y la puedo evaluar
+
+\section{Objetivos de la tesis}
+\subsection{Objetivo general}
+Desarrollar e implementar un prototipo sistema de deteccion automatico de ocupacion de playas de estacionamientos y estudiar su rendimiento bajo distintas condiciones.
+
+\todo[inline,color=red]{Puede ser que el objetivo sea mejor:
+¿\gl{}estudiar la factibilidad de implementar un prototipo de sistema\gr{}?
+O \gl{}Estudiar el rendimiento de un [posible sistema/prototipo de sistema] de ocupación, considerando su rendimiento bajo distintas condiciones de exigencia\gr{}
+
+No se menciona que se utiliza visión computacional, estimo que es a drede.}
+
+\subsection{Objetivos específicos}    
+
+\todo[inline,color=red]{¿No son muchos objetivos específicos? Habitualmente son 2, 3 o 4. Los objetivos específicos no son actividades, sino qué se busca lograr y debe desprenderse del general.}
+
+\begin{enumerate}[O1.]
+    
+  \item Analizar y comparar diferentes enfoques utilizados en sistemas de estacionamiento inteligente para la detección de plazas disponibles y el control de ingreso y egreso de vehículos.
+
+% \item  Investigar herramientas, librerías y frameworks orientados a visión computacional, \iffalse  e inteligencia artificial \fi evaluando su aplicabilidad en el desarrollo de sistemas de monitoreo vehicular en tiempo real.
+  
+    % \item Investigar y evaluar diferentes modelos y arquitecturas de detección de objetos aplicables al reconocimiento de vehículos en entornos de estacionamiento, considerando alternativas basadas en visión computacional.
+    
+    \item Investigar y evaluar herramientas, librerías, frameworks, modelos y arquitecturas de detección de objetos orientados a visión computacional,\todo{no se menciona visión computacional en el general, si se menciona se acota a esto, ¿estaría bien o mejor no lo acotamos?} analizando su aplicabilidad para el desarrollo de un sistema de detección de ocupación de playas de estacionamiento.
+    
+    \item Diseñar un prototipo de sistema de estacionamiento inteligente basado en visión computacional capaz de detectar la ocupación de plazas y monitorear el flujo de vehículos en tiempo real.
+    
+   % \item Desarrollar los módulos necesarios para el funcionamiento del sistema, incluyendo detección de vehículos, monitoreo de espacios disponibles y control de ingreso y egreso al predio.
+
+   \item Implementar el sistema diseñado, integrando las funcionalidades necesarias para la detección de vehículos, el monitoreo de espacios disponibles y el control de ingreso y egreso un predio.
+
+   \item Realizar pruebas experimentales en distintos escenarios y condiciones de iluminación para estudiar el rendimiento, precisión y viabilidad del sistema propuesto en contextos reales. %OBS  tabla-tiempo e/s misma tabla por humano en presicion
+
+
+\end{enumerate}
+
+\section{Descripción y relevancia de la propuesta}
+El crecimiento urbano y el aumento sostenido del parque automotor han vuelto cada vez más compleja la gestión de los espacios de estacionamiento, tanto en el ámbito de la planificación urbana como en la administración de playas de estacionamiento  \cite{channamallu2023review}. La dificultad para encontrar un lugar disponible no solo genera pérdida de tiempo para los conductores —afectando su productividad y aumentando los niveles de estrés—, sino que también contribuye a la congestión del tránsito, favoreciendo prácticas como el estacionamiento en doble fila, la ocupación de veredas o de espacios no habilitados y el bloqueo de accesos. Asimismo, esta situación incrementa el consumo de combustible, los niveles de contaminación ambiental y produce un impacto económico y operativo negativo tanto en los usuarios como en la gestión eficiente de los estacionamientos.
+
+
+La \textbf{Dirección Nacional del Registro de la Propiedad Automotor} (DNRPA) evidencia incrementos interanuales en la cantidad de vehículos en circulación, tanto a nivel nacional como provincial, entre ellas la Provincia de Neuquén \cite{dnrpa2026parque}. En el mismo sentido, según el artículo \cite{lmneuquen2026patentamientos} publicado en el diario \gl{}La Mañana de Neuquén\gr{}, la provincia se destaca como una de las jurisdicciones donde se registran un mayor número de patentamiento de vehículos en el país.
+\todo[inline]{Hace poco se incluyeron semáforos inteligentes en la ciudad de Neuquén. ¿Se podría citar eso también como más motivación?}
+
+https://www.neuquencapital.gov.ar/prensa/gaido-moderniza-el-transito-de-neuquen-con-la-firma-del-convenio-para-implementar-semaforos-con-inteligencia-artificial/
+
+https://www.lmneuquen.com/neuquen/neuquen-ya-dio-el-primer-paso-instalar-semaforos-inteligentes-como-cambiara-el-transito-n1242567
+
+
+
+
+En este contexto, se introduce el concepto de Smart Cities (ciudades inteligentes), orientado al uso de sistemas informáticos y de comunicación para optimizar la administración de la infraestructura urbana y mejorar la calidad de vida de las personas 
+\cite{caragliu2011smart}. Los autores Albino, Berardi y Dangelico \cite{albino2015smart}  señalan que, si bien no existe una única definición del concepto, las \textbf{\gl{}Ciudades Inteligentes\gr{}} se caracterizan por la incorporación de tecnologías de información y comunicación en la gestión urbana.
+
+Los sistemas de estacionamiento inteligente surgen como una solución para afrontar las problemáticas vinculadas a la disponibilidad y administración de los espacios destinados al estacionamiento, en el contexto en el que el creciente parque automotor circulando provoca uso ineficiente de la infraestructura disponible, congestión y perdida de tiempo \cite{diaz2020survey, cabri2026reservation, ala2025real}.
+
+
+
+En consecuencia a lo anteriormente explicado, la presente propuesta consiste en el desarrollo e implementación de un sistema inteligente que, mediante técnicas de visión computacional, permita identificar en tiempo real la ocupación de una playa de estacionamiento, así como registrar el ingreso y egreso de vehículos a través del control de la barrera de acceso. Este enfoque evita la necesidad de instalar sensores individuales en cada plaza, contribuyendo a reducir los costos de instalación y mantenimiento, facilitando su uso en distintos tipos de estacionamientos públicos o privados \cite{channamallu2025smartparking}.
+
+La importancia de este sistema radica en su aporte a la mejora en la operación de las playas de estacionamiento, ya que permite contar con información precisa y actualizada en tiempo real sobre la disponibilidad de espacios, lo que se traduce en un control más eficiente del flujo vehicular, un mejor aprovechamiento del espacio y la posibilidad de integrarlo con herramientas de supervisión y gestión. Asimismo, desde una perspectiva urbana, la adopción de este tipo de soluciones impulsa el desarrollo de ciudades más inteligentes, al contribuir a la reducción de los tiempos de búsqueda de estacionamiento, mitigar la congestión en zonas de alta demanda y promover una movilidad más eficiente y sustentable.
+
+En resumen, la propuesta aborda una problemática concreta mediante el uso de tecnologías actuales y se enmarca en las tendencias de infraestructuras inteligentes, ofreciendo una solución escalable y adaptable con impacto en la gestión urbana y la experiencia de los usuarios.
+
+\todo[inline]{¿Dónde se publicará el código? ¿será software libre? si es libre se debe aclarar.}
+
+\section{Metodología}
+\todo[inline]{Incluir la metodología de trabajo para desarrollar la tesis. ¿Cuántas veces nos juntamos? ¿quincenalmente? ¿habrá utilización de recursos? ¿qué es necesario  para desarrollar la tesis? ¿habrán pruebas y prototipos? \\
+¿cuáles son las cualificaciones del director y codirector en el área? ¿disponemos de otras personas para consultar al respecto?}
+
+En primer lugar, se realizará un relevamiento sobre sistemas de estacionamiento inteligentes, con el objetivo de identificar las principales técnicas utilizadas en la actualidad para la detección de ocupación de espacios vehiculares y detección de ingreso y egreso de autos al predio de estacionamiento. Este análisis incluirá tanto soluciones tradicionales basadas en sensores físicos como enfoques más modernos apoyados en tecnologías de visión computacional e inteligencia artificial.  
+
+Después, se estudiarán diferentes arquitecturas y enfoques disponibles, si los hubieran, abarcando modelos de detección de objetos, técnicas de procesamiento de video en tiempo real y soluciones basadas en sensores, con el objetivo de identificar sus principales características y limitaciones. 
+
+%A partir de este análisis, se investigarán herramientas y librerías de desarrollo orientadas a visión computacional, priorizando aquellas de código abierto, tales como OpenCV, así como frameworks de deep learning como PyTorch y TensorFlow, que permitan la implementación eficiente del sistema propuesto. Asimismo, se utilizarán y evaluarán distintos modelos de detección de objetos basados en la arquitectura YOLO, cargados a partir de pesos preentrenados en archivos .pt, con el fin de analizar su desempeño en la detección de vehículos dentro del entorno de estacionamiento.
+A partir de este análisis, se investigarán herramientas y librerías de desarrollo orientadas a visión computacional, priorizando aquellas de código abierto, tales como OpenCV -- buscar referencias, así como frameworks de deep learning como PyTorch y TensorFlow, que permitan la implementación eficiente del sistema propuesto. Además, se estudiarán y evaluarán diferentes modelos y arquitecturas de detección de objetos aplicables al reconocimiento de vehículos dentro del entorno de estacionamiento, considerando entre las posibles alternativas modelos basados en YOLO \cite{terven2023comprehensive} \todo{¿YOLO es en minúsculas o mayúsculas en el artículo?} y otros enfoques de visión computacional.
+
+
+A continuación, se estudiarán diferentes arquitecturas y enfoques existentes para sistemas de estacionamiento inteligente, abarcando modelos de detección de objetos, técnicas de procesamiento de video en tiempo real y soluciones basadas en sensores, con el objetivo de identificar sus principales características, ventajas y limitaciones.
+
+
+Luego, se procederá al diseño e implementación de un sistema de estacionamiento inteligente basado en visión por computadora, aplicando una metodología de desarrollo incremental que permita construir y mejorar progresivamente los módulos del sistema, como la detección de vehículos, el monitoreo de plazas y el control de ingreso y egreso. 
+
+
+Por último, se llevarán a cabo pruebas experimentales en diferentes escenarios con el fin de comprobar el desempeño del sistema en condiciones variadas de iluminación y niveles de ocupación. Los resultados se analizarán utilizando métricas cuantitativas que permitan medir su rendimiento, junto con una evaluación cualitativa orientada a determinar su viabilidad en contextos reales de estacionamientos tanto públicos como privados.
+
+
+\section{Plan de actividades y cronograma tentativo}
+% Flujo propuesto: 
+% investigación → tecnologías → modelos → herramientas → diseño → implementación → pruebas → evaluación → escalabilidad → conclusiones
+
+Con el fin de alcanzar los objetivos propuestos, se proponen las siguientes actividades:
+
+\todo[inline]{Lo ideal es describir las actividades en una o dos oraciones. Ej.: 
+\gl Actividad 1: Realizar estudio del estado del arte de sistemas de estacionamiento inteligente. \gr}
+
+\begin{enumerate}[{Actividad} 1]
+ \item  Se llevará a cabo un estudio del estado del arte en sistemas de estacionamiento inteligente, examinando las soluciones disponibles y las técnicas empleadas para la detección de ocupación en espacios de estacionamiento vehicular. 
+ 
+\item  Se analizarán y contrastarán diferentes enfoques tecnológicos utilizados para abordar el problema del estacionamiento inteligente, incluyendo visión por computadora, inteligencia artificial y sistemas basados en sensores, con el objetivo de identificar sus características, ventajas y limitaciones.
+
+Además se profundizará en modelos de detección de objetos basados en deep learning, analizando distintas variantes de la arquitectura YOLO, con el fin de analizar su desempeño en contextos de estacionamiento y su aplicabilidad en la detección de vehículos en tiempo real.
+
+\item Se seleccionarán  herramientas y librerías de desarrollo, tales como OpenCV, PyTorch y TensorFlow , entre otras, las cuales se emplearán en la implementación del sistema propuesto.
+
+
+\item Se diseñará la arquitectura del sistema de estacionamiento inteligente, estableciendo los componentes necesarios para la detección de vehículos, el monitoreo de plazas disponibles y el control del flujo vehicular.
+
+\item Se llevará a cabo la implementación del sistema mediante una metodología incremental, incorporando de forma progresiva los distintos componentes desarrollados y efectuando pruebas de funcionamiento en cada una de las etapas.
+
+\item Se realizarán  pruebas experimentales en diversas condiciones de iluminación, clima y oclusiones parciales, con el fin de evaluar la robustez del sistema.
+
+\item Se evaluará el rendimiento del sistema utilizando métricas cuantitativas como precisión\footnote{Precision mide qué porcentaje de las detecciones positivas del modelo fueron correctas.}, recall\footnote{Recall (Sensibilidad o Exhaustividad).
+Mide cuántos casos positivos reales encontró el modelo.}, F1-score \footnote{F1-score
+Es una combinación entre Precision y Recall.
+Sirve cuando querés balancear ambos.}, FPS\footnote{FPS (Frames Per Second)
+Cantidad de imágenes/cuadros que el sistema procesa por segundo.} y consumo de recursos, complementándolo con una evaluación cualitativa sobre su aplicabilidad.
+\todo[inline]{Los footnotes (las definiciones de conceptos) deberían ir en la descripción o considerarlos como ya conocidos.}
+
+\item Se analizará la escalabilidad del sistema en su implementación en diversos escenarios de estacionamiento, teniendo en cuenta cambios en el tamaño, la cantidad de cámaras y el nivel de complejidad del entorno.
+
+\item Se elaborarán las conclusiones finales en base a los resultados alcanzados, destacando las limitaciones detectadas y proponiendo posibles mejoras para el sistema desarrollado.
+
+\end{enumerate}
+
+\todo[inline]{Falta la actividad de redacción de tesis. Debe estar explícitamente, debe ser la última y debe ocupar más del 50\% del tiempo en el cronograma.}
+
+
+En la Tabla \ref{tab:cronograma} se muestra el cronograma relacionando las actividades con el tiempo planificado. Cada columna representa un mes y las filas las actividades enumeradas previamente. \todo{completar tabla y debatir tiempos}
+
+%\newcommand{\x}{\cellcolor[gray]{.5}}
+\newcommand{\x}{ \cellcolor{blue!70} }
+\newcommand{\y}{\cellcolor[gray]{.8}}
+\begin{table}[htbp]
+\caption{Tabla descriptiva del cronograma de actividades. \label{tab:cronograma}}
+\centering
+\ \\
+
+\begin{tabular}{|l||*{6}{c|}|}
+\hline
+\backslashbox{Actividad}{Mes} &\ \ \ 1\ \ \  &\ \ \  2\ \ \  &\ \ \  3\ \ \  &\ \ \  4\ \ \  &\ \ \ 5\ \ \  &\ \ \  6\ \ \  \\
+\hline
+Actividad 1 & \x & \x &  &  &  & \\\hline
+Actividad 2 &  & \x &  &  &  & \\   \hline
+%Actividad 3 &  &\x  & \x &  &  & \\\hline
+Actividad 3 &  &  & \x & \x &  & \\  \hline
+Actividad 4 &  &  & & \x &  & \\\hline
+Actividad 5 &  &  & &  & \x & \\\hline
+Actividad 6 &  &  &  &  &\x  & \x \\\hline
+Actividad 7 &  &  &  &  &\x  & \x \\\hline
+Actividad 8 &  &  &\x  & \x & \x & \x \\\hline
+Actividad 9  &  &  &\x  & \x & \x & \x \\\hline
+\end{tabular}
+\end{table}
+
+\todo[inline]{Firma del estudiante}
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.3\linewidth]{firmaElectronica-removebg-preview.png}
+\end{figure}
+
+\newpage
+
+% \bibliographystyle{unsrt}
+% \bibliography{references}
+\section{Bibliografía Inicial}
+% \renewcommand{\refname}{Referencias bibliográficas}
+\todo[inline]{Las referencias de arXiv no son consideradas válidas. Si están publicados en un congreso o revista, directamente citar ese.}
+\printbibliography[heading=none]
+
+\todo[inline]{Firma del estudiante}
+\begin{figure}[h]
+    \centering
+    % \includegraphics[width=0.3\linewidth]{firmaElectronica-removebg-preview.png}
+\end{figure}
+
+
+\end{document}
