@@ -25,9 +25,13 @@ MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 .RECIPEPREFIX = >
 
+# ¿Dónde se encuentran los sty y texs para LaTeX?
+TEXINPUTS=::$(PWD)/libs
+export TEXINPUTS
+
 all: main.pdf
 
-main.pdf: main.tex
+main.pdf: main.tex references.bib
 > latexmk -lualatex main.tex
 
 clean:
