@@ -1,0 +1,17 @@
+# Generados por LaTeX
+*.pdf
+*.orig.pdf
+tesis/*.pdf
+*.bbl
+*.aux
+*.out
+*.fls
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.fdb_latexmk
+
+# Temporales de Emacs:
+\#*
+*~
